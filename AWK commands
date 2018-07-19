@@ -1,0 +1,13 @@
+
+Take only temp, precip, et, runoff, streamfow:
+
+awk 'NR>1 {print $1,$2,$3,$5,$6,$11,$18,$19}' file1 > file2
+
+Leave the header alone, adjust temp_min temp_max:
+
+awk '{if(NR==1){print $1,$2,$3,$4,$5,$6,$7,$8} else if (NR>1) {print $1,$2,$3,$4,$5,1+$6,1+$7,$8}}' forcing_file1 > forcing_file2
+
+awk 'NR>1 {print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19}' file1 > file2
+
+
+
